@@ -19,7 +19,7 @@ import com.example.examen_parcial_foodapp.models.Restaurant
 fun CategoryCard(category: Category) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         GlideImage(
-            model = category.image, // URL de la imagen
+            model = category.image,
             contentDescription = category.name,
             modifier = Modifier.size(80.dp)
         )
@@ -32,7 +32,7 @@ fun CategoryCard(category: Category) {
 fun RestaurantCard(restaurant: Restaurant) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         GlideImage(
-            model = restaurant.image, // URL de la imagen
+            model = restaurant.image,
             contentDescription = restaurant.name,
             modifier = Modifier.size(80.dp)
         )
@@ -45,7 +45,7 @@ fun RestaurantCard(restaurant: Restaurant) {
 fun FoodCard(food: Food) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         GlideImage(
-            model = food.image, // URL de la imagen
+            model = food.image,
             contentDescription = food.name,
             modifier = Modifier.size(100.dp)
         )
