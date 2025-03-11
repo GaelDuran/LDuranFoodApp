@@ -36,7 +36,7 @@ val restaurants = listOf(
     Restaurant("Pizza Hut", "https://upload.wikimedia.org/wikipedia/sco/thumb/d/d2/Pizza_Hut_logo.svg/2177px-Pizza_Hut_logo.svg.png"),
     Restaurant("Subway", "https://foodbrandlogo.com/wp-content/uploads/2024/12/Subway-logo-1024x580.webp"),
     Restaurant("Domino's Pizza", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/1200px-Domino%27s_pizza_logo.svg.png"),
-    Restaurant("Taco Bell", "https://cdn.freebiesupply.com/images/thumbs/2x/taco-bell-logo.png"),
+    Restaurant("Taco Bell", "https://logodownload.org/wp-content/uploads/2021/05/taco-bell-logo-1.png"),
     Restaurant("Carl's Jr", "https://1000marcas.net/wp-content/uploads/2021/02/Carls-Jr.-Logo-1977.png")
 )
 
