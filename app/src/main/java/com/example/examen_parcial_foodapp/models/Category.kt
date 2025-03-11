@@ -23,9 +23,9 @@ val categories = listOf(
     Category("Italian", "https://static.vecteezy.com/system/resources/previews/027/931/960/non_2x/italian-food-pasta-noodle-illustration-free-png.png"),
     Category("Mexican", "https://static.vecteezy.com/system/resources/previews/013/391/996/non_2x/tasco-mexican-food-png.png"),
     Category("Indian", "https://static.vecteezy.com/system/resources/previews/044/764/882/non_2x/tikka-masala-curry-chicken-served-over-rice-in-bowl-traditional-indian-food-png.png"),
-    Category("Japanese", "https://cdn-icons-png.flaticon.com/512/3075/3075977.png"),
-    Category("Vegan", "https://cdn-icons-png.flaticon.com/512/2553/2553691.png"),
-    Category("BBQ", "https://cdn-icons-png.flaticon.com/512/1809/1809303.png")
+    Category("Japanese", "https://static.vecteezy.com/system/resources/previews/009/583/124/non_2x/udon-japan-food-illustration-png.png"),
+    Category("Vegan", "https://static.vecteezy.com/system/resources/previews/044/813/389/non_2x/bowl-with-vegan-food-isolated-on-transparent-background-png.png"),
+    Category("BBQ", "https://pngimg.com/d/barbecue_PNG50.png")
 )
 
 
@@ -35,9 +35,9 @@ val restaurants = listOf(
     Restaurant("KFC", "https://pngimg.com/d/kfc_PNG53.png"),
     Restaurant("Pizza Hut", "https://upload.wikimedia.org/wikipedia/sco/thumb/d/d2/Pizza_Hut_logo.svg/2177px-Pizza_Hut_logo.svg.png"),
     Restaurant("Subway", "https://foodbrandlogo.com/wp-content/uploads/2024/12/Subway-logo-1024x580.webp"),
-    Restaurant("Domino's Pizza", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/1200px-Dominos_pizza_logo.svg.png"),
-    Restaurant("Taco Bell", "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Taco_Bell_2016.svg/1920px-Taco_Bell_2016.svg.png"),
-    Restaurant("Starbucks", "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/800px-Starbucks_Corporation_Logo_2011.svg.png")
+    Restaurant("Domino's Pizza", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/1200px-Domino%27s_pizza_logo.svg.png"),
+    Restaurant("Taco Bell", "https://cdn.freebiesupply.com/images/thumbs/2x/taco-bell-logo.png"),
+    Restaurant("Carl's Jr", "https://1000marcas.net/wp-content/uploads/2021/02/Carls-Jr.-Logo-1977.png")
 )
 
 
@@ -47,7 +47,7 @@ val foods = listOf(
     Food("Pizza Margherita", "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg", 4.8f, 9.99),
     Food("Tacos", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/800px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg", 4.3f, 3.99),
     Food("Butter Chicken", "https://www.recipetineats.com/tachyon/2019/01/Butter-Chicken_5-SQ.jpg?resize=500%2C375", 4.6f, 8.49),
-    Food("Sushi", "https://upload.wikimedia.org/wikipedia/commons/6/60/Sushi_platter.jpg", 4.9f, 12.99),
-    Food("Vegan Salad", "https://upload.wikimedia.org/wikipedia/commons/5/54/Vegan_Salad.jpg", 4.4f, 6.99),
-    Food("BBQ Ribs", "https://upload.wikimedia.org/wikipedia/commons/a/aa/BBQ_ribs.jpg", 4.7f, 14.99)
+    Food("Sushi", "https://static.vecteezy.com/system/resources/previews/049/159/934/non_2x/japanese-food-sushi-isolated-transparent-png.png", 4.9f, 12.99),
+    Food("Vegan Salad", "https://png.pngtree.com/png-clipart/20230427/original/pngtree-salad-greens-vegan-transparent-png-image_9116625.png", 4.4f, 6.99),
+    Food("BBQ Ribs", "https://static.vecteezy.com/system/resources/thumbnails/024/320/528/small_2x/delicious-barbecued-spare-ribs-tasty-bbq-meat-isolated-on-transparent-background-generate-ai-free-png.png", 4.7f, 14.99)
 )
