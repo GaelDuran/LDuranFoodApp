@@ -29,14 +29,14 @@ fun CategoryCard(category: Category) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Box(
             modifier = Modifier
-                .size(100.dp) // Tamaño del círculo
+                .size(100.dp)
                 .background(Color.Red, shape = CircleShape),
             contentAlignment = Alignment.Center
         ) {
             GlideImage(
                 model = category.image,
                 contentDescription = category.name,
-                modifier = Modifier.size(70.dp) // Tamaño de la imagen dentro del círculo
+                modifier = Modifier.size(70.dp)
             )
         }
         Text(text = category.name)
@@ -66,6 +66,7 @@ fun FoodCard(food: Food) {
                 contentDescription = food.name,
                 modifier = Modifier.size(100.dp)
             )
+
             Box(
                 modifier = Modifier
                     .background(Color.Red, shape = RoundedCornerShape(8.dp))
