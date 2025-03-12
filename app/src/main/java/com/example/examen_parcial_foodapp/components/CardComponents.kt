@@ -63,7 +63,7 @@ fun RestaurantCard(restaurant: Restaurant) {
 @Composable
 fun FoodSection(foods: List<Food>) {
     Column {
-        foods.chunked(2).forEach { rowFoods ->
+        foods.chunked(2).take(4).forEach { rowFoods ->
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -78,6 +78,7 @@ fun FoodSection(foods: List<Food>) {
         }
     }
 }
+
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable

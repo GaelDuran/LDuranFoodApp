@@ -78,9 +78,10 @@ fun HomeScreen(innerPadding: PaddingValues) {
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(foods) { food ->
-                FoodSection(foods = foods)
+                FoodSection(foods = foods.take(8))
             }
         }
+
     }
 }
 
