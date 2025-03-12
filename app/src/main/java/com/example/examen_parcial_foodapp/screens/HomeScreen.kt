@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.examen_parcial_foodapp.components.CategoryCard
 import com.example.examen_parcial_foodapp.components.FoodCard
+import com.example.examen_parcial_foodapp.components.FoodSection
 import com.example.examen_parcial_foodapp.components.RestaurantCard
 import com.example.examen_parcial_foodapp.models.categories
 import com.example.examen_parcial_foodapp.models.foods
@@ -77,7 +78,7 @@ fun HomeScreen(innerPadding: PaddingValues) {
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(foods) { food ->
-                FoodCard(food = food)
+                FoodSection(foods = foods)
             }
         }
     }

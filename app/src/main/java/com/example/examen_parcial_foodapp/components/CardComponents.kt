@@ -1,10 +1,13 @@
 package com.example.examen_parcial_foodapp.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -57,19 +60,34 @@ fun RestaurantCard(restaurant: Restaurant) {
     }
 }
 
+@Composable
+fun FoodSection(foods: List<Food>) {
+    Column {
+        foods.chunked(2).forEach { rowFoods ->
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                rowFoods.forEach { food ->
+                    FoodCard(food)
+                }
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+    }
+}
+
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun FoodCard(food: Food) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .padding(8.dp) // Espacio para que se vea mejor
-    ) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Box(contentAlignment = Alignment.TopEnd) {
             GlideImage(
                 model = food.image,
                 contentDescription = food.name,
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier.size(90.dp)
             )
 
             Box(
@@ -80,7 +98,7 @@ fun FoodCard(food: Food) {
                 Text(
                     text = "$${food.price}",
                     color = Color.White,
-                    fontSize = 12.sp // Tamaño reducido para que se vea mejor
+                    fontSize = 12.sp
                 )
             }
         }
@@ -91,11 +109,8 @@ fun FoodCard(food: Food) {
         }
         Text(
             text = food.name,
-            fontSize = 10.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 4.dp)
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Medium
         )
     }
 }
-
-
