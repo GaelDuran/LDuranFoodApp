@@ -26,6 +26,11 @@ import com.example.examen_parcial_foodapp.models.Category
 import com.example.examen_parcial_foodapp.models.Food
 import com.example.examen_parcial_foodapp.models.Restaurant
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
@@ -62,8 +67,11 @@ fun RestaurantCard(restaurant: Restaurant) {
 
 @Composable
 fun FoodSection(foods: List<Food>) {
-    Column {
-        foods.chunked(2).take(4).forEach { rowFoods ->
+    LazyColumn(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        items(foods.chunked(2)){ rowFoods ->
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -74,21 +82,28 @@ fun FoodSection(foods: List<Food>) {
                     FoodCard(food)
                 }
             }
-            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }
 
 
+
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun FoodCard(food: Food) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .padding(8.dp)
+            .width(150.dp)
+    ) {
         Box(contentAlignment = Alignment.TopEnd) {
             GlideImage(
                 model = food.image,
                 contentDescription = food.name,
-                modifier = Modifier.size(90.dp)
+                modifier = Modifier
+                    .size(120.dp)
+                    .background(Color.LightGray, shape = RoundedCornerShape(8.dp))
             )
 
             Box(
@@ -103,15 +118,18 @@ fun FoodCard(food: Food) {
                 )
             }
         }
+        Spacer(modifier = Modifier.height(8.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(text = "★", color = Color.Green, fontSize = 14.sp)
             Spacer(modifier = Modifier.width(4.dp))
             Text(text = "${food.rating}", fontSize = 12.sp)
         }
+        Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = food.name,
-            fontSize = 12.sp,
-            fontWeight = FontWeight.Medium
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Medium,
+            maxLines = 1
         )
     }
 }

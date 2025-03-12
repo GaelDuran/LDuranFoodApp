@@ -1,6 +1,7 @@
 package com.example.examen_parcial_foodapp.screens
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -23,6 +24,7 @@ import com.example.examen_parcial_foodapp.models.categories
 import com.example.examen_parcial_foodapp.models.foods
 import com.example.examen_parcial_foodapp.models.restaurants
 import com.example.examen_parcial_foodapp.ui.theme.Examen_Parcial_FoodAppTheme
+import kotlin.text.chunked
 
 @Composable
 fun HomeScreen(innerPadding: PaddingValues) {
@@ -60,7 +62,11 @@ fun HomeScreen(innerPadding: PaddingValues) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = "Busca los Mejores Restaurantes", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+        Text(
+            text = "Busca los Mejores Restaurantes",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold
+        )
         LazyRow(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -73,27 +79,30 @@ fun HomeScreen(innerPadding: PaddingValues) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(text = "Nuestras Mejores comidas", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        LazyRow(
+        LazyColumn(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            items(foods) { food ->
-                FoodSection(foods = foods.take(8))
+            items(foods.chunked(2)) { rowFoods ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    rowFoods.forEach { food ->
+                        FoodCard(food)
+                    }
+                }
             }
         }
-
     }
 }
 
-
-@Preview(
-    showBackground = true,
-    showSystemUi = true,
-    device = Devices.PIXEL
-)
-@Composable
-fun HomeScreenPreview() {
-    Examen_Parcial_FoodAppTheme {
-        HomeScreen(innerPadding = PaddingValues(16.dp))
-    }
-}
+//    @Composable
+//    fun HomeScreenPreview() {
+//        Examen_Parcial_FoodAppTheme {
+//            HomeScreen(innerPadding = PaddingValues(16.dp))
+//        }
+//    }
+//}
