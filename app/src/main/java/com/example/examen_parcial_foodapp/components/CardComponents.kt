@@ -22,6 +22,7 @@ import com.bumptech.glide.integration.compose.GlideImage
 import com.example.examen_parcial_foodapp.models.Category
 import com.example.examen_parcial_foodapp.models.Food
 import com.example.examen_parcial_foodapp.models.Restaurant
+import androidx.compose.ui.text.font.FontWeight
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
@@ -59,7 +60,11 @@ fun RestaurantCard(restaurant: Restaurant) {
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun FoodCard(food: Food) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .padding(8.dp) // Espacio para que se vea mejor
+    ) {
         Box(contentAlignment = Alignment.TopEnd) {
             GlideImage(
                 model = food.image,
@@ -75,16 +80,22 @@ fun FoodCard(food: Food) {
                 Text(
                     text = "$${food.price}",
                     color = Color.White,
-                    fontSize = 14.sp
+                    fontSize = 12.sp // Tamaño reducido para que se vea mejor
                 )
             }
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = "★", color = Color.Green, fontSize = 16.sp)
+            Text(text = "★", color = Color.Green, fontSize = 14.sp)
             Spacer(modifier = Modifier.width(4.dp))
-            Text(text = "${food.rating}", fontSize = 14.sp)
+            Text(text = "${food.rating}", fontSize = 12.sp)
         }
-        Text(text = food.name)
+        Text(
+            text = food.name,
+            fontSize = 10.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 4.dp)
+        )
     }
 }
+
 
